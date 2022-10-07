@@ -12,7 +12,7 @@ def home(request):
 
 class ShopView(ListView):
     model = Product
-    template_name = 'shop.html'
+    template_name = 'shop/index.html'
     
     
 class ArticleDetailView(DetailView):
