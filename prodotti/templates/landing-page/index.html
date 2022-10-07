@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+    <head>
+		{% load static %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Nuova Erboristeria Agraria | Scienza & Natura</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+        <link href="{% static 'css/landing-page/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/landing-page/bootstrap-icons.css'%}" rel="stylesheet">
+
+        <link rel="stylesheet" href="{% static 'css/landing-page/magnific-popup.css'%}">
+
+        <link href="{% static 'css/landing-page/aos.css'%}" rel="stylesheet">
+
+        <link href="{% static 'css/landing-page/templatemo-nomad-force.css'%}" rel="stylesheet">
+
+    </head>
+    
+    <body>
+    
+        <main>
+
+            <section class="hero" id="hero">
+                <div class="heroText">
+                    <h1 class="text-white mt-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="800">
+                        Nuova Erboristeria Agraria 
+                    </h1>
+
+                    <p class="text-secondary-white-color" data-aos="fade-up" data-aos-delay="1000">
+                    <strong class="custom-underline">Scienza</strong> & <strong class="custom-underline">Natura</strong>
+                    </p>
+                </div>
+
+                <div class="videoWrapper">
+                    <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                        <source src="{% static 'media/video-back.mp4'%}" type="video/mp4">
+
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="overlay"></div>
+            </section>
+
+            <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                        <img width="200px" height="80px" src="{% static 'media/logo.png' %}">
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'home' %}"><ion-icon name="home-outline"></ion-icon>Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'shop' %}"><ion-icon name="bag-handle-outline"></ion-icon>Shop</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'preventivo' %}"><ion-icon name="cash-outline"></ion-icon>Richiedi un Preventivo</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'about' %}"><ion-icon name="people-circle-outline"></ion-icon>Chi Siamo</a>
+                            </li>
+							{% if user.is_authenticated %}
+							{% if user.first_name%}
+							<li class="nav-item">
+                                <a class="nav-link" href="{% url 'account' %}"><ion-icon name="person-circle-outline"></ion-icon>Ciao {{user.first_name }} </a>
+                            </li>
+							{% else %}
+							<li class="nav-item">
+                                <a class="nav-link" href="{% url 'account' %}"><ion-icon name="person-circle-outline"></ion-icon>Account</a>
+                            </li>
+							{% endif %}
+							{% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}"><ion-icon name="log-in-outline"></ion-icon>Accedi</a>
+                            </li>
+							{% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <section class="section-padding pb-0" id="about">
+                <div class="container mb-5 pb-lg-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="mb-3" data-aos="fade-up">L'Erboristeria Agraria</h2>
+                        </div>
+                        <div class="col-lg-6 col-12 mt-3 mb-lg-5">
+                            <p class="me-4" data-aos="fade-up" data-aos-delay="300">E' il risultato di studi finalizzati alla risoluzione delle problematiche presenti nel mondo dell’agricoltura ed aiutare l’ambiente oggi particolarmente stressato dai cambiamenti climatici.</p>
+                        </div>
+
+						<div class="col-12">
+                            <h2 class="mb-3" data-aos="fade-up">Per un produttore agricolo aderire al progetto vuol dire</h2>
+                        </div>
+						<div class="col-lg-6 col-12 mt-3 mb-lg-5">
+							<ul>
+								<li data-aos="fade-up" data-aos-delay="300">
+                            		<p class="me-4" data-aos="fade-up" data-aos-delay="300">
+										Usare i nostri prodotti <strong> ENZIMAR,FUNGOCID E RESINOL </strong>
+										per realizzare coltivazioni sostenibili con benefici al suolo e all’ 
+										aria che respiriamo, oltre a consentire un 
+									<strong>risparmio economico.</strong></p>
+								</li>
+								<br><br>
+								<li data-aos="fade-up" data-aos-delay="300">
+                            		<p class="me-4" data-aos="fade-up" data-aos-delay="300">
+										Usare i nostri prodotti nelle coltivazioni intensive <strong>sotto serra</strong>, 
+										consentendo di evitare la <strong>sterilizzazione del terreno</strong> con composti 
+										chimici ad alto impatto <strong>inquinante</strong> e con residui ,senza dover isolare 
+										i terreni <strong>con costi enormi</strong> di plastica inquinante.</p>
+								</li>
+								<br><br>
+								<li data-aos="fade-up" data-aos-delay="300">
+                            		<p class="me-4" data-aos="fade-up" data-aos-delay="300">
+									<strong>Eventuali plastiche di copertura</strong> durano comunque più a 
+										lungo in quanto non vengono a contatto con <strong>fitofarmaci </strong>
+										e non si deteriorano né opacizzano consentendo così alla 
+									<strong>luce solare</strong> di penetrare liberamente.</p>
+								</li>
+								<br><br>
+								<li data-aos="fade-up" data-aos-delay="300">
+                            		<p class="me-4" data-aos="fade-up" data-aos-delay="300">
+										I nostri <strong>piani di concimazioni organiche o miste</strong> sono 
+										in grado di portare avanti le colture evitando le <strong>malattie</strong>
+										 e gli <strong>attacchi dei nematodi</strong> senza stancare mai il terreno. 
+										 Le nostre tecniche di coltivazione <strong>non generano esalazioni 
+										 tossiche</strong> tipiche dei <strong>fitofarmaci</strong> e favoriscono la <strong>respirazione 
+										 del terreno</strong> e delle piante sotto serra.</p>
+								</li>
+							</ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-3 col-12 p-0">
+                            <img src="images/elena-rabkina-eVVzwsNhNf4-unsplash.jpg" class="img-fluid about-image" alt="">
+                        </div>
+
+                        <div class="col-lg-3 col-12 bg-dark">  
+                            <div class="d-flex flex-column flex-wrap justify-content-center h-100 py-5 px-4 pt-lg-4 pb-lg-0">
+                                <h3 class="text-white mb-3" data-aos="fade-up">We’re - idealists and strategic thinkers.</h3>
+
+                                <p class="text-secondary-white-color" data-aos="fade-up">Over six years in the video business</p>
+
+                                <div class="mt-3 custom-links">
+                                    
+                                    <a href="#news" class="text-white custom-link" data-aos="zoom-in" data-aos-delay="100">Read News & Events</a>
+
+                                    <a href="#contact" class="text-white custom-link" data-aos="zoom-in" data-aos-delay="300">Work with Us</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-12 p-0">  
+                            <section id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="images/people/studio-shot-beautiful-happy-retired-caucasian-female-with-pixie-hairdo-crossing-arms-her-chest-having-confident-look-smiling-broadly.jpg" class="img-fluid team-image" alt="">
+
+                                        <div class="team-thumb bg-warning">
+                                            <h3 class="text-white mb-0">Susane R.</h3>
+
+                                            <p class="text-secondary-white-color mb-0">Founding Partner</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img src="images/people/project-leder-with-disabilities-looking-front-sitting-immobilized-wheelchair-business-office-room.jpg" class="img-fluid team-image" alt="">
+
+                                        <div class="team-thumb bg-primary">
+                                            <h3 class="text-white mb-0">Morgan S.</h3>
+
+                                            <p class="text-secondary-white-color mb-0">CEO & Investor</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img src="images/people/asia-business-woman-feeling-happy-smiling-looking-camera-while-relax-home-office.jpg" class="img-fluid team-image" alt="">
+
+                                        <div class="team-thumb bg-success">
+                                            <h3 class="text-white mb-0">Naomi W.</h3>
+
+                                            <p class="text-secondary-white-color mb-0">Art Director</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img src="images/people/happy-african-american-professional-manager-smiling-looking-camera-headshot-portrait.jpg" class="img-fluid team-image" alt="">
+
+                                        <div class="team-thumb bg-info">
+                                            <h3 class="text-white mb-0">Robinson H.</h3>
+
+                                            <p class="text-secondary-white-color mb-0">Sales & Marketing</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img src="images/people/working-business-lady.jpg" class="img-fluid team-image" alt="">
+
+                                        <div class="team-thumb bg-danger">
+                                            <h3 class="text-white mb-0">Jane M.</h3>
+
+                                            <p class="text-secondary-white-color mb-0">Project Management</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+                                      <span class="visually-hidden">Previous</span>
+                                </button>
+
+                                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+                                      <span class="visually-hidden">Next</span>
+                                </button>
+                            </section>
+
+                        </div>
+                    </div>
+                </div> -->
+            </section>
+
+            <!-- <section class="section-padding" id="portfolio">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h2 class="mb-5 text-center" data-aos="fade-up">I Prodotti Ricavati</h2>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="portfolio-thumb mb-5" data-aos="fade-up">
+                                <a href="images/portfolio/visuals-Y4qzW3AsvqI-unsplash.jpeg" class="image-popup">
+                                    <img src="images/portfolio/visuals-Y4qzW3AsvqI-unsplash.jpeg" class="img-fluid portfolio-image" alt="">
+                                </a>
+
+                                <div class="portfolio-info">
+                                    <h4 class="portfolio-title mb-0">Effortless</h4>
+
+                                    <p class="text-danger">Branding</p>
+                                </div>
+                            </div> 
+
+                            <div class="portfolio-thumb" data-aos="fade-up">
+                                <a href="images/portfolio/severin-candrian-nn3uIZqmUtE-unsplash.jpeg" class="image-popup">
+                                    <img src="images/portfolio/severin-candrian-nn3uIZqmUtE-unsplash.jpeg" class="img-fluid portfolio-image" alt="">
+                                </a>
+
+                                <div class="portfolio-info">                     
+                                    <h4 class="portfolio-title mb-0">Health technology</h4>
+
+                                    <p class="text-success">Art Direction</p>
+                                </div>
+                            </div> 
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="portfolio-thumb mt-5 mt-lg-0 mb-5" data-aos="fade-up">
+                                <a href="images/portfolio/tyler-nix-Y1drF0Y3Oe0-unsplash.jpeg" class="image-popup">
+                                    <img src="images/portfolio/tyler-nix-Y1drF0Y3Oe0-unsplash.jpeg" class="img-fluid portfolio-image" alt="">
+                                </a>
+
+                                <div class="portfolio-info">                     
+                                    <h4 class="portfolio-title mb-0">Maki</h4>
+
+                                    <p class="text-warning">Website</p>
+                                </div>
+                            </div> 
+
+                            <div class="portfolio-thumb" data-aos="fade-up">
+                                <a href="images/portfolio/thought-catalog-gv-T-OjLe4c-unsplash.jpeg" class="image-popup">
+                                    <img src="images/portfolio/thought-catalog-gv-T-OjLe4c-unsplash.jpeg" class="img-fluid portfolio-image" alt="">
+                                </a>
+
+                                <div class="portfolio-info">                     
+                                    <h4 class="portfolio-title mb-0">The gig economy</h4>
+
+                                    <p class="text-info">Graphic</p>
+                                </div>
+                            </div> 
+                        </div>
+
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- <section class="news section-padding" id="news">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h2 class="mb-5 text-center" data-aos="fade-up">News & Events</h2>
+                        </div>
+
+                        <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                            <div class="news-thumb" data-aos="fade-up">
+                                <a href="news-detail.html" class="news-image-hover news-image-hover-warning">
+                                    <img src="images/news/caroline-lm-uqveD8dYPUM-unsplash.jpg" class="img-fluid large-news-image news-image" alt="">
+                                </a>
+
+                                <div class="news-category bg-warning text-white">News</div>
+                                
+                                <div class="news-text-info">
+                                    <h5 class="news-title">
+                                        <a href="news-detail.html" class="news-title-link">The rise of the gig economy spells the end for these workers the old system</a>
+                                    </h5>
+
+                                    <span class="text-muted">22 hours ago</span>
+                                </div>
+                            </div> 
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="news-thumb news-two-column d-flex flex-column flex-lg-row" data-aos="fade-up">
+                                <div class="news-top w-100">
+                                    
+                                    <a href="news-detail.html" class="news-image-hover news-image-hover-primary">
+                                        <img src="images/news/jean-philippe-delberghe-MmanXAs1sKw-unsplash.jpeg" class="img-fluid news-image" alt="">
+                                    </a>
+
+                                    <div class="news-category bg-primary text-white">Events</div>
+                                </div>
+                                
+                                <div class="news-bottom w-100">
+                                    <div class="news-text-info">
+                                        <h5 class="news-title">
+                                            <a href="news-detail.html" class="news-title-link">Job Opportunities: Digital, Marketing</a>
+                                        </h5>
+
+                                        <div class="d-flex flex-wrap">
+                                            <span class="text-muted me-2">
+                                                <i class="bi-geo-alt-fill me-1 mb-2 mb-lg-0"></i>
+                                                Alaska,
+                                            </span>
+
+                                            <span class="text-muted">August 6, 2021</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+
+                            <div class="news-thumb news-two-column d-flex flex-column flex-lg-row" data-aos="fade-up">
+                                <div class="news-top w-100" data-aos="fade-up">
+                                    
+                                    <a href="news-detail.html" class="news-image-hover news-image-hover-success">
+                                        <img src="images/news/maria-stewart-p4tj0g-_aMM-unsplash.jpeg" class="img-fluid news-image" alt="">
+                                    </a>
+
+                                    <div class="news-category bg-success text-white">News</div>
+                                </div>
+                                
+                                <div class="news-bottom w-100">
+                                    <div class="news-text-info">
+                                        <h5 class="news-title">
+                                            <a href="news-detail.html" class="news-title-link">What happened to new viral video?</a>
+                                        </h5>
+
+                                        <span class="text-muted">6 days ago</span>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+
+                    </div>
+                </div>
+            </section> -->
+
+
+			<!-- Poster -->
+			<h1>I nostri Prodotti </h1> <br><br><br>
+  <div data-aos="fade-up" data-aos-delay="300" class="poster mt-3" id="prodotti">
+    <div class="poster__img">
+      <img src="{% static 'media/enzimar-front.jpeg'%}" class="poster_image" alt="">
+    </div>
+    <div class="poster__content">
+      <h3 data-aos="fade-up" data-aos-delay="400" class="big-text">ENZIMAR</h3><br><br>
+      <p data-aos="fade-up" data-aos-delay="500">ENZIMAR è un macerato erbaceo enzimatico 
+		naturale biologico che migliora lo stato di salute della pianta e rigenera e rivitalizza 
+		il terreno. La sua efficacia si nota immediatamente nell'arco delle 24 ore.
+		 La pianta trattata risulta immediatamente più vigorosa e sana e si può raccogliere 
+		 subito dopo l’applicazione in quanto il prodotto, completamente composto di estratti 
+		 vegetali, non contamina le colture.</p>
+      <br><br>
+      <a data-aos="fade-up" data-aos-delay="600" href="{% url 'shop' %}#products " class="btn btn-succes">Scopri di più</a>
+    </div>
+  </div>
+
+
+
+  <!-- Poster -->
+  <div data-aos="fade-up" data-aos-delay="300" class="poster mt-3">
+    <div  class="poster__content ">
+      <h3 data-aos="fade-up" data-aos-delay="400" class="big-text">RESINOL</h3><br><br>
+      <p data-aos="fade-up" data-aos-delay="500">RESINOL FOGLIARE è un macerato 
+		erbaceo enzimatico naturale biologico che crea una barriera idrolipidica 
+		sulla parte trattata lasciando respirare la stessa e disabituare il proliferare di muffe,
+		 batteri e insetti succhiatori della linfa e migliora lo stato di salute della pianta. La pianta trattata risulta 
+		 immediatamente più vigorosa e sana e si può raccogliere subito 
+		 dopo l’applicazione in quanto il prodotto, 
+		  completamente composto di estratti vegetali, non contamina le colture.</p>
+      <br><br>
+      <a data-aos="fade-up" data-aos-delay="600" href="{% url 'shop' %}#products" class="button">Scopri di più</a>
+    </div>
+    <div class="poster__img  ">
+      <img src="{% static 'media/poster2-image.png'%}" alt="">
+    </div>
+  </div>
+
+
+  <!-- Poster -->
+
+  <div class="poster mt-3" id="prodotti">
+    <div data-aos="fade-up" data-aos-delay="300" class="poster__img ">
+      <img src="{% static 'media/fungocid.jpeg'%}" class="poster_image" alt="">
+    </div>
+    <div class="poster__content ">
+      <h3 data-aos="fade-up" data-aos-delay="400" class="big-text">FUNGOCID</h3><br><br>
+      <p data-aos="fade-up" data-aos-delay="500">FUNGOCID è un macerato erbaceo enzimatico naturale
+        che migliora lo stato di salute della pianta.
+        La sua efficacia si nota nell'arco delle 24 ore.
+        La pianta trattata risulta immediatamente più vigorosa e sana
+        e si può raccogliere subito dopo l'applicazione
+        in quanto il prodotto, completamente composto di estratti vegetali,
+        non contamina le colture.</p>
+        <br><br>
+      <a data-aos="fade-up" data-aos-delay="600" href="{% url 'shop' %}#products" class="button">Scopri di più</a>
+    </div>
+  </div>
+
+            <section class=" contact section-padding" id="contact">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-lg-7 col-12 mx-auto">
+
+                            <h2 class="mb-4 text-center" data-aos="fade-up">Contattaci</h2>
+
+                            <form action="#" method="post" class="contact-form" role="form" data-aos="fade-up">
+
+                                <div class="row">
+                                    
+                                    <div class="col-lg-6 col-6">
+                                        <label for="name" class="form-label">Nome<sup class="text-danger">*</sup></label>
+
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="Nome Completo" required>
+                                    </div>
+
+                                    <div class="col-lg-6 col-6">
+                                        <label for="email" class="form-label">Email <sup class="text-danger">*</sup></label>
+
+                                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Inserisci un indirizzo email valido" required>
+                                    </div>
+
+                                    <div class="col-12 my-4">
+                                        <label for="message" class="form-label">How can we help?</label>
+
+                                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Chiedici qualunque cosa" required></textarea>
+                                        
+                                    </div>
+                                <div class="col-lg-5 col-12 mx-auto mt-5">
+                                    <button type="submit" class="form-control">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="google-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.6362575414955!2d13.236201215261012!3d41.2950202792727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132523f2c98f38cb%3A0x53ca9988fcfdee23!2sNuova%20Erboristeria%20Agraria%20-%20Scienza%20e%20Natura!5e0!3m2!1sit!2sit!4v1665053358294!5m2!1sit!2sit" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12">
+                        <h5 class="text-white">
+                            <i class="bi-geo-alt-fill me-2"></i>
+                            Nuova Erboristeria Agraria
+                        </h5>
+						<p class="text-white">
+							è un'idea di Luigi Calzuolo, Proprietario del marchio Tricoerb.
+							Tutti i diritti riservati
+						</p>
+
+                        <a href="mailto:help@nuovaerboristeriaagraria.it" class="custom-link mt-3 mb-5">
+                            help@nuovaerboristeriaagraria.it
+                        </a>
+                    </div>
+
+                    <div class="col-6">
+                        <p class="copyright-text mb-0">Copyright © Tricoerb 2022
+                        
+                        <br><br>Design: <a href="https://templatemo.com/page/1" target="_parent">Mattia Gattuccio Web Designer</a></p>
+                    
+                    </div>
+
+                    <div class="col-lg-3 col-5 ms-auto">
+                        <!-- <ul class="social-icon">
+                            <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-twitter"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                        </ul> -->
+						<a href="https://www.privacypolicygenerator.info/live.php?token=lW3QPpFxZdWU3VAvlPb4fSoYrv3eN9pJ" class="btn btn-outline-warning">Privacy Policy</a>
+						<a href="https://nibirumail.com/cookies/policy/?url=www.onjbost.pythonanywhere.com" class="btn btn-outline-warning">Cookie Policy</a>
+                    
+                    </div>
+
+                </div>
+            </section>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="{% static 'js/landing-page/jquery.min.js'%}"></script>
+        <script src="{% static 'js/landing-page/bootstrap.bundle.min.js'%}"></script>
+        <script src="{% static 'js/landing-page/jquery.sticky.js'%}"></script>
+        <script src="{% static 'js/landing-page/aos.js'%}"></script>
+        <script src="{% static 'js/landing-page/jquery.magnific-popup.min.js'%}"></script>
+        <script src="{% static 'js/landing-page/magnific-popup-options.js'%}"></script>
+        <script src="{% static 'js/landing-page/scrollspy.min.js'%}"></script>
+        <script src="{% static 'js/landing-page/custom.js'%}"></script>
+
+    </body>
+</html>

@@ -1,0 +1,21 @@
+{% extends 'registration/accbase.html' %}
+{% block title %}Registrati{% endblock title %}
+
+{% block content %}
+<div class="container">
+
+<h1>Registrati</h1>
+<br><br>
+
+<div class="form-group">
+    <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-success">Registrati</button>
+    <a class="btn btn-outline-secondary" href="{% url 'home' %}">Torna alla Home</a>
+    </form>
+
+</div>
+
+</div>
+{% endblock content %}

@@ -1,0 +1,45 @@
+<html lang="en">
+    <head>
+		{% load static %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Nuova Erboristeria Agraria | Scienza & Natura</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+        <link href="{% static 'css/landing-page/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/landing-page/bootstrap-icons.css'%}" rel="stylesheet">
+
+        <link rel="stylesheet" href="{% static 'css/landing-page/magnific-popup.css'%}">
+
+        <link href="{% static 'css/landing-page/aos.css'%}" rel="stylesheet">
+
+        <link href="{% static 'css/landing-page/templatemo-nomad-force.css'%}" rel="stylesheet">
+
+    </head>
+    <body>
+        {% block content %}{% endblock content %}
+        <!-- JAVASCRIPT FILES -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="{% static 'js/landing-page/jquery.min.js'%}"></script>
+        <script src="{% static 'js/landing-page/bootstrap.bundle.min.js'%}"></script>
+        <script src="{% static 'js/landing-page/jquery.sticky.js'%}"></script>
+        <script src="{% static 'js/landing-page/aos.js'%}"></script>
+        <script src="{% static 'js/landing-page/jquery.magnific-popup.min.js'%}"></script>
+        <script src="{% static 'js/landing-page/magnific-popup-options.js'%}"></script>
+        <script src="{% static 'js/landing-page/scrollspy.min.js'%}"></script>
+        <script src="{% static 'js/landing-page/custom.js'%}"></script>
+
+    </body>
+</html>
+

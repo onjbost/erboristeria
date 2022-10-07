@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title%} {% endblock %} | Nuova Erboristeria Agraria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Custom Style -->
+    <link rel="stylesheet" href="{% static 'css\style.css' %}">
+    <link rel="stylesheet" href="{% static 'css\footer.css' %}">
+    {% block extra_css %}{% endblock extra_css %}
+
+<!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    
+<!-- Meyer Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" />
+    
+<!-- Flickity -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.min.css" integrity="sha512-ztsAq/T5Mif7onFaDEa5wsi2yyDn5ygdVwSSQ4iok5BPJQGYz1CoXWZSA7OgwGWrxrSrbF0K85PD5uLpimu4eQ==" crossorigin="anonymous" />
+  
+<!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+  
+<!-- Icon Script -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+<!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon\apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon\favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon\favicon-16x16.png'%}">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <!-- Header -->
+  <div class="header">
+    <div class="logo">
+      <a href="{% url 'home' %}">
+      <img src="{% static 'media\logo.png'%}"  width="250"  height="80" alt="">
+    </a>
+    </div>
+    <ul class="menu">
+      {% if user.is_authenticated %}
+      {% comment %} <li><a href="{% url 'cart' %}"><ion-icon name="cart-outline"></ion-icon> Carrello</a></li> {% endcomment %}
+      {% if user.first_name %}
+      <li><a href="{% url 'account' %}"><ion-icon name="person-circle-outline"></ion-icon> Ciao {{user.first_name}}</a></li>
+      {% else %}
+      <li><a href="{% url 'account' %}"><ion-icon name="person-circle-outline"></ion-icon> Account </a></li>
+      {% endif %}
+      {% else %}
+      <li><a href="{% url 'login' %}"><ion-icon name="log-in-outline"></ion-icon> Accedi</a></li>
+      {% endif %}
+
+      {% comment %} <li><a href="{% url 'hair_shop' %}"><ion-icon name="bag-outline"></ion-icon>Beauty Shop</a></li> {% endcomment %}
+      <li><a href="{% url 'shop' %}"><ion-icon name="bag-outline"></ion-icon> Shop</a></li>
+      <li><a href="{% url 'home' %}"><ion-icon name="home-outline"></ion-icon> Home</a></li>
+    </ul>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  {% block content %}
+
+
+  {% endblock %}
+  <!-- Footer -->
+  <footer>
+    <div class="article">
+      <div class="left box">
+        <div class="upper">
+          <div class="topic">Su di Noi</div>
+          <p>Nuova Erborboristeria Agraria nasce da un'idea di Luigi Calzuolo. Tutti i Prodotti e Marchi registrati</p>
+        </div>
+        <div class="lower">
+          <div class="topic">Contattaci</div>
+          <div class="phone">
+            <a href="#"><i class="fas fa-phone-volume"></i>+39 338 800 1051</a>
+          </div>
+          <div class="email">
+            <a href="#"><i class="fas fa-envelope">nelluistricoerb@hotmail.it</i></a>
+          </div>
+        </div>
+      </div>
+      <div class="middle box">
+        <div class="topic">Menu</div>
+        <div><a href="{% url 'home' %}">Home</a></div>
+        <div><a href="{% url 'shop' %}">Shop</a></div>
+        {% if user.is_authenticated %}
+        <div><a href="{% url 'edit_profile' %}">Account</a></div>
+        <div><a href="{% url 'logout' %}">Logout</a></div>
+        {% else %}
+        <div><a href="{% url 'login' %}">Login</a></div>
+        <div><a href="{% url 'register' %}">Register</a></div>
+        {% endif %}
+      </div>
+      <div class="right box">
+        <div class="topic">Iscriviti alla NewsLetter</div>
+        <form action="#">
+          <input type="text" placeholder="Enter Your email address">
+          <input type="submit" name="" value="Send">
+          {% comment %} <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div> {% endcomment %}
+        </form>
+      </div>
+    </div>
+    <div class="bottom">
+      <p>Copyright © 2022 <a href="#">Tricoerb</a> All rights reserved</p>
+    </div>
+  </footer>
+  
+  
+  
+  
+  
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  
+  
+  
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js" integrity="sha512-Nx/M3T/fWprNarYOrnl+gfWZ25YlZtSNmhjHeC0+2gCtyAdDFXqaORJBj1dC427zt3z/HwkUpPX+cxzonjUgrA==" crossorigin="anonymous"></script>
+  
+
+    
+    <script>
+    $( document ).ready(function() {
+  
+      /* Open Panel */
+      $( ".hamburger" ).on('click', function() {
+        $(".menu").toggleClass("menu--open");
+      });
+  
+    });
+  
+  
+    ScrollReveal().reveal('.reveal',  { distance: '100px', duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)', interval: 600 });
+  
+    ScrollReveal().reveal('.zoom',  { duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)', interval: 200, scale: 0.65, mobile: false});
+  
+  
+  
+  </script>
+  </body>
+  </html>

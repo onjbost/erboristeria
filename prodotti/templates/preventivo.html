@@ -1,0 +1,25 @@
+{% extends 'registration\accbase.html' %}
+{% load static %}
+{% block content %}
+<nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+  
+        <img src="{% static 'media\logo.png' %}" alt="Bootstrap" width="200" height="100">
+  
+      <a href="{% url 'shop' %}" class=" cardd btn btn-outline-secondary">Torna indietro</a>
+      </a>
+    </div>
+  </nav>
+<br><br><br><br><br>
+<div class="container">
+    <h1>Per Preventivi gratuiti Scrivere una mail a <strong>nelluistricoerb@hotmail.it</strong><br>
+    O chiamare al <strong>+39 338 800 1051</strong>
+    </h1>
+</div>
+
+
+{% endblock content %}
+
+
+

@@ -1,0 +1,65 @@
+﻿{% extends 'registration/accbase.html' %}
+{% block content %}
+{% load static %}
+<nav class="navbar bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'media/logo.png'%}" alt="" width="200" height="80" class="d-inline-block align-text-top">
+      </a>
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'shop' %}">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'preventivo' %}">Preventivo</a>
+        </li>
+        {% if user.is_authenticated %}
+        {% if user.first_name %}
+        <li class="nav-item">
+          <ion-icon name="person-circle-outline"></ion-icon><a class="nav-link" href="{% url 'edit_profile' %}">Ciao {{user.first_name}}</a>
+          </li>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'edit_profile' %}">Account</a>
+          </li>
+        {% endif %}
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Account</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav> 
+  <br><br><br>
+  <div class="container">
+
+    <h1 class="text-center" style='font-family: "Playfair Display", serif;'>Su di Noi</h1>
+    <figure class="figure">
+        <img src="{% static 'media/foto-tes.png' %}" width="250px" height="300px" class="figure-img img-fluid rounded" alt="...">
+        <h1 style='font-family: "Playfair Display", serif;'> Calzuolo Luigi </h1>
+        <figcaption class="figure-caption">Nasco a Nola il 07/05/1970 . Fin da ragazzo coltivo la passione per la natura e per tutto ciò che è sano e sostenibile. Faccio esperienza presso un laboratorio erboristico dove apprendo le procedure di estrazione naturale. 
+            Frequentando il laboratorio è nata in me l’idea di creare cosmetici naturali per corpo e capelli . Inizio quindi realizzando la mia prima linea di cosmetici chiamata TRICOERB . Successivamente, attraverso l’ uso della microcamera e presso studi medici, ho lavorato per la cura di problematiche dei follicoli e del cuoio capelluto curate con i prodotti naturali della linea da me realizzata. 
+            A  38 anni mi trasferisco  a Terracina, città dell’ Agro Pontino , importante realtà agricola in Italia per la produzione ortofrutticola. Realizzo qui un nuovo laboratorio ed entro in contatto con un biologo il quale mi invoglia a realizzare formulati naturali per le colture agricole. Inizio quindi a inserirmi in questo settore realizzando prodotti naturali testati da un laboratorio di analisi della zona.
+            Affianco quindi alla linea tricologica una linea di prodotti totalmente biologici per l’ agricoltura. Attualmente sono pronto a soddisfare le esigenze di coltivazioni intensive sia in serra che in campo aperto con prodotti a residui ZERO. 
+            Il mio obiettivo è la creazione della prima Erboristeria Agraria che permetterà la coltivazione di cibi sani, nutrienti e sicuri. </figcaption>
+      </figure>
+  </div>
+
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+{% endblock content %}
+
+
+
+
+
+
+
+

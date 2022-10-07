@@ -1,0 +1,19 @@
+{% extends 'registration/accbase.html' %}
+{% block title %}Impostazioni Account{% endblock title %}
+{% block content %}
+
+<div class="container">
+    {% if user.is_authenticated %}
+<h1>Ciao {{user.first_name}}</h1>
+
+    <ul>
+        <li><a class="btn btn-primary" href="{% url 'edit_profile' %}"> Modifica il Profilo</a></li>
+        <li><a class="btn btn-primary" href="{% url 'logout' %}"> Logout</a></li>
+    </ul>
+
+{%else%}
+
+    <h1>Effettua Prima <a href="{% url 'login' %}">L'accesso</a></h1>
+    {% endif %}
+</div>
+{% endblock content %}
