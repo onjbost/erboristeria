@@ -75,7 +75,10 @@
     scroll-behavior: smooth;
   }
 }
-
+.resize{
+  width: 450px;
+  height: 400px;
+}
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
