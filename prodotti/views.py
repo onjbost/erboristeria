@@ -1,4 +1,5 @@
 from audioop import reverse
+from this import d
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import *
 from prodotti.models import *
@@ -26,4 +27,8 @@ def preventivo(request):
 
 def about(request):
     return render(request,'about/index.html', {} )
+
+
+def faq(request):
+    return render(request, 'faq/faq.html', {})
 

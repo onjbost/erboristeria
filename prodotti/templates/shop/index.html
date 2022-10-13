@@ -94,7 +94,7 @@
                                     </div> -->
                                     <!-- Product price-->
                                     {{product.price}}€ al kg
-                                    <p class="lead">{{ product.description | safe | slice:50 }}...</p>
+                                    <p class="lead">{{ product.description | safe | slice:20 }}...</p>
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -118,5 +118,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="{% static 'js/shop/js/scripts.js'%}"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4984553264565463"
+     crossorigin="anonymous"></script>
     </body>
 </html>

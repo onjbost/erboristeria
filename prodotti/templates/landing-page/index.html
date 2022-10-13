@@ -4,9 +4,17 @@
 		{% load static %}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Mattia Gattuccio Web Designer">
+        <meta name="description" content="Ecommerce di prodotti Bio">
+        <meta name="copyright" content="Tricoerb">
+        <meta name="generator" content="Visual Studio Code">
+        <meta name="robots" content="all">
+        <meta name="dc.language" content="ita" scheme="RFC1766">
+        <meta http-equiv="reply-to" content="luigi.calzuolo@nuovaerboristeria.it">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="refresh" content="50">
+        <meta HTTP-EQUIV="keywords" content="nuova erboristeria agraria bio naturale ambiente shop cosmetici cosmetico insetticidi insetticida fungocidi fungocida enzimar resinol">
 
-        <meta name="description" content="">
-        <meta name="author" content="">
 
         <title>Nuova Erboristeria Agraria | Scienza & Natura</title>
 
@@ -81,6 +89,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'about' %}"><ion-icon name="people-circle-outline"></ion-icon>Chi Siamo</a>
                             </li>
+                            
 							{% if user.is_authenticated %}
 							{% if user.first_name%}
 							<li class="nav-item">
@@ -559,6 +568,8 @@
         <script src="{% static 'js/landing-page/magnific-popup-options.js'%}"></script>
         <script src="{% static 'js/landing-page/scrollspy.min.js'%}"></script>
         <script src="{% static 'js/landing-page/custom.js'%}"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4984553264565463"
+     crossorigin="anonymous"></script>
 
     </body>
 </html>
