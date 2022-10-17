@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Mattia Gattuccio Web Designer">
-        <meta name="description" content="Ecommerce di prodotti Bio">
+        <meta name="description" content="Nuova Erboristeria Agraria. Prodotti Naturali per il tuo cibo e il tuo corpo">
         <meta name="copyright" content="Tricoerb">
         <meta name="generator" content="Visual Studio Code">
         <meta name="robots" content="all">
@@ -15,6 +15,24 @@
         <meta http-equiv="refresh" content="50">
         <meta HTTP-EQUIV="keywords" content="nuova erboristeria agraria bio naturale ambiente shop cosmetici cosmetico insetticidi insetticida fungocidi fungocida enzimar resinol">
         <title>Nuova Erboristeria Agraria | Scienza & Natura</title>
+
+        <!-- Condivisione -->
+        <meta property="og:site_name" content="Nuova Erboristeria Agraria" />
+        <meta property="og:title" content="Nuova Erboristeria Agraria | Scienza e Natura" />
+        <meta property="og:description" content="Nuova Erboristeria Agraria. Prodotti Naturali per il tuo cibo e il tuo corpo" />
+        <meta property="og:image" content="https://www.nuovaerboristeriaagraria.com/static/media/logo.png">
+        <meta property="og:locale" content="it_IT">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://www.nuovaerboristeriaagraria.com">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="nuovaerboristeriaagraria.com">
+        <meta property="twitter:url" content="https://www.nuovaerboristeriaagraria.com">
+        <meta name="twitter:title" content="Nuova Erboristeria Agraria | Scienza e Natura">
+        <meta name="twitter:description" content="Nuova Erboristeria Agraria. Prodotti Naturali per il tuo cibo e il tuo corpo">
+        <meta name="twitter:image" content="https://www.nuovaerboristeriaagraria.com/static/media/logo.png">
+
+
          <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon\apple-touch-icon.png'%}">
         <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon\favicon-32x32.png'%}">
@@ -68,7 +86,7 @@
 
             <nav class="navbar navbar-expand-lg bg-light shadow-lg">
                 <div class="container">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{% url 'home' %}">
                         <img width="200px" height="80px" src="{% static 'media/logo.png' %}">
                     </a>
 
