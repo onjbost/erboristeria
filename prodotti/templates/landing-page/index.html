@@ -14,9 +14,13 @@
         <meta http-equiv="pragma" content="no-cache">
         <meta http-equiv="refresh" content="50">
         <meta HTTP-EQUIV="keywords" content="nuova erboristeria agraria bio naturale ambiente shop cosmetici cosmetico insetticidi insetticida fungocidi fungocida enzimar resinol">
-
-
         <title>Nuova Erboristeria Agraria | Scienza & Natura</title>
+         <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon\apple-touch-icon.png'%}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon\favicon-32x32.png'%}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon\favicon-16x16.png'%}">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
 
         <!-- CSS FILES -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -548,14 +552,20 @@
 
                             <li><a href="#" class="social-icon-link bi-youtube"></a></li>
                         </ul> -->
-						<a href="https://www.privacypolicygenerator.info/live.php?token=lW3QPpFxZdWU3VAvlPb4fSoYrv3eN9pJ" class="btn btn-outline-warning">Privacy Policy</a>
+						<a href="{% url 'privacy' %}" class="btn btn-outline-warning">Privacy Policy</a>
+                        <br>
+                        <a href="{% url 'service' %}" class="btn btn-outline-warning">Termini di servizio</a>
+                        <br>
 						<a href="https://nibirumail.com/cookies/policy/?url=www.onjbost.pythonanywhere.com" class="btn btn-outline-warning">Cookie Policy</a>
-                    
+                        
                     </div>
 
                 </div>
             </section>
         </footer>
+
+        {% comment %} Banner Cookies {% endcomment %}
+        <script src="https://app.enzuzo.com/apps/enzuzo/static/js/__enzuzo-cookiebar.js?uuid=48417f72-4d43-11ed-868b-3744d079fcf0"></script>
 
         <!-- JAVASCRIPT FILES -->
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

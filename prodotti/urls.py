@@ -9,5 +9,6 @@ urlpatterns = [
     path('prodotto/<int:pk>/', ArticleDetailView.as_view(), name='article_detail'),
     path('preventivo/', preventivo, name='preventivo'),
     path('su_di_noi/', about, name='about'),
-    path('faq/', faq, name='faq')
+    path('termini_di_servizio/', service, name='service'),
+    path('privacy_policy/', privacy, name='privacy')
 ]

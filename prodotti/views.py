@@ -28,7 +28,9 @@ def preventivo(request):
 def about(request):
     return render(request,'about/index.html', {} )
 
+def service(request):
+    return render(request, 'privacyeservice/service.html', {})
 
-def faq(request):
-    return render(request, 'faq/faq.html', {})
+def privacy(request):
+    return render(request, 'privacyeservice/privacy.html', {})
 
